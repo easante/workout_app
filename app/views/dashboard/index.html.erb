@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1>Athletes Lounge!</h1>
+  <p>show off your workout to your friends and family</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+<div class="">
+  <% @athletes.each do |athlete| %>
+    <div>
+      <%= athlete.full_name %>
+      <% if current_user %>
+      <%= link_to "Follow", friendships_path(friend_id: athlete.id),
+          method: :post, class: "btn btn-default" unless current_user.follows_or_same?(athlete) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
