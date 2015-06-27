@@ -16,8 +16,8 @@
       <% @exercises.each do |exercise| %>
         <tr>
           <td><%= exercise.duration_in_min %></td>
-          <td><%= exercise.distance %></td>
-          <td><%= exercise.activity_date %></td>
+          <td><%= truncate(exercise.workout, length: 100) %></td>
+          <td><%= exercise.workout_date %></td>
         </tr>
       <% end %>
     </tbody>
@@ -25,7 +25,6 @@
 
   <br>
 
-  Average Speed (m/s): <%= @friend.average_speed %><br>
   <br>
 
   <%= link_to 'Back', user_exercises_path(current_user),

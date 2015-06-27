@@ -44,7 +44,7 @@ class ExercisesController < ApplicationController
   def update
     respond_to do |format|
       if @exercise.update(exercise_params)
-        format.html { redirect_to @exercise, notice: 'Exercise was successfully updated.' }
+        format.html { redirect_to [current_user, @exercise], notice: 'Exercise was successfully updated.' }
         format.json { render :show, status: :ok, location: @exercise }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ExercisesController < ApplicationController
   def destroy
     @exercise.destroy
     respond_to do |format|
-      format.html { redirect_to exercises_url, notice: 'Exercise was successfully destroyed.' }
+      format.html { redirect_to user_exercises_path(current_user), notice: 'Exercise was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:duration_in_min, :distance, :activity_date, :user_id)
+      params.require(:exercise).permit(:duration_in_min, :workout, :workout_date, :user_id)
     end
 end

@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150624141600) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "duration_in_min"
-    t.float    "distance"
-    t.date     "activity_date"
+    t.text     "workout"
+    t.date     "workout_date"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

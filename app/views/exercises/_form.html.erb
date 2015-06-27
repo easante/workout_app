@@ -24,10 +24,10 @@
 
       <div class='form-group'>
         <div class='control-label col-md-2'>
-          <%= f.label :distance %><br>
+          <%= f.label :workout, "Workout Details" %><br>
         </div>
         <div class='col-md-10'>
-          <%= f.text_field :distance, class: 'form-control' %>
+          <%= f.text_area :workout, class: 'form-control', rows: "10" %>
         </div>
       </div>
 
@@ -36,7 +36,7 @@
           <%= f.label :activity_date %>
         </div>
         <div class='col-md-10'>
-          <%= f.date_select :activity_date, class: 'form-control' %>
+          <%= f.date_select :workout_date, class: 'form-control' %>
         </div>
       </div>
 
