@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-8 col-xs-12">
   <p id="notice"><%= notice %></p>
 
   <% unless @exercises.empty? %>
@@ -32,17 +32,22 @@
 
   <br>
 <% else %>
-  <div>
-    No Workouts yet.
+  <div class="alert alert-danger message-font text-center" role="alert">
+    No Workouts yet
   </div>
   <br>
 <% end %>
   <%= link_to 'New Workout', new_user_exercise_path(current_user),
       class: "btn btn-primary" %>
 
+  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
+
+
+
+
 </div>
 
-<div class="col-md-4">
+<div class="col-md-4 col-xs-12">
   <h1 class="text-center">My Friends</h1>
 
   <% @friends.each do |friend| %>
