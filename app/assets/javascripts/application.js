@@ -13,8 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-// require turbolinks
 //= require raphael-min
 //= require morris.min
-// require exercises
 //= require_tree .

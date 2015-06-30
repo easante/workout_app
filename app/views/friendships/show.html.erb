@@ -25,6 +25,8 @@
 
   <br>
 
+  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
+
   <br>
 
   <%= link_to 'Back', user_exercises_path(current_user),
