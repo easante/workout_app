@@ -14,6 +14,13 @@ $(document).ready(function() {
     ykeys: ['duration_in_min'],
     // Labels for the ykeys -- will be displayed when you hover over the
     // chart.
-    labels: ['Duration (min)']
+    labels: ['Duration (min)'],
+    xLabels: "day",
+    xLabelAngle: 60,
+    xLabelFormat: function (x) {
+      date_string = x.getFullYear() + "/" + x.getMonth() + "/" + x.getDate();
+      return date_string;
+    },
+    yLabelFormat: function(y) { return y + ' min'; }
   });
 });
