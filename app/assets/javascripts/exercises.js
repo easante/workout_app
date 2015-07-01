@@ -18,7 +18,7 @@ $(document).ready(function() {
     xLabels: "day",
     xLabelAngle: 60,
     xLabelFormat: function (x) {
-      date_string = x.getFullYear() + "/" + x.getMonth() + "/" + x.getDate();
+      date_string = x.getFullYear() + "/" + parseInt(x.getMonth() + 1) + "/" + x.getDate();
       return date_string;
     },
     yLabelFormat: function(y) { return y + ' min'; }
